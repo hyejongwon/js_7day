@@ -8,16 +8,18 @@
         body{background: #ddd;font-family:'arial',sans-serif;color:#999}
         #wrapper{width: 280px;margin: 0 auto;box-shadow:0 0 10px rgba(0,0,0,0.2)}
         .main li{border-top:1px solid #ddd;background: #fff}
-        .main>li>a{display: block;height: 60px;line-height: 60px; padding: 0 20px;font-size: 24px;color:#666;background: url(img/mini/sprite.png) no-repeat right top #f0f0f0}
+        .main>li>a{display: block;height: 60px;line-height: 60px; padding: 0 20px;font-size: 24px;color:#666;background: url(img/sprite.png) no-repeat right top #f0f0f0}
         .main>li.on>a{background-position: right top -60px;color:#048ffb}
         .sub>li{height: 50px;line-height: 50px;font-size: 20px;padding-left: 20px;}
         .sub{display: none}
+        .sub.open{display: block;}
+        .main>li>a ,.sub , .sub>li , .sub>li>a{pointer-events: none;}
     </style>
 </head>
 <body>
     <div id="wrapper">
         <ul class="main">
-            <li>
+            <li data-num="0">
                 <a href="#">Main1</a>
                 <ul class="sub">
                     <li><a href="#">Sub1</a></li>    
@@ -25,7 +27,7 @@
                     <li><a href="#">Sub3</a></li>    
                 </ul>
             </li>
-            <li>
+            <li data-num="1">
                 <a href="#">Main2</a>
                 <ul class="sub">
                     <li><a href="#">Sub1</a></li>    
@@ -33,7 +35,7 @@
                     <li><a href="#">Sub3</a></li>    
                 </ul>
             </li>
-            <li>
+            <li data-num="2">
                 <a href="#">Main3</a>
                 <ul class="sub">
                     <li><a href="#">Sub1</a></li>    
@@ -41,7 +43,7 @@
                     <li><a href="#">Sub3</a></li>    
                 </ul>
             </li>
-            <li>
+            <li data-num="3">
                 <a href="#">Main4</a>
                 <ul class="sub">
                     <li><a href="#">Sub1</a></li>    
@@ -51,5 +53,6 @@
             </li>
         </ul>
     </div>
+    <script src="js/accodian_menu.js"></script>
 </body>
 </html>
