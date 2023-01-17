@@ -1,0 +1,47 @@
+@import url(reset.css);
+
+body{background: url(../img/wally/bg.png)}
+#logo{
+    width: 180px;height: 190px;margin: 40px;
+    background: url(../img/wally/logo.png) no-repeat;text-indent: -9999px;font-size: 0;
+}
+#control {
+    width: 180px;height: 180px;margin: 40px;border-radius: 50%;
+    background: #d6423e;position: relative;
+    overflow: auto;
+}
+/*
+부모요소와 자식요소에 마진겹침 마진상쇄 
+부모요소에 overflow:auto 
+*/
+
+
+#control a{
+    display: block;
+    width: 180px;height: 25px;
+    margin: 20px 0;text-indent: -9999px;
+    background: url(../img/wally/arrow.png) no-repeat top center;
+    opacity: 0.75;
+    
+}
+#control a:hover{opacity:1}
+#control a#arrBottom{background-position: bottom center;position: absolute;bottom:0}
+
+#control #heightBox{width: 150px;height: 50px;line-height: 50px;color:#d4433b;font-size: 25px;text-align: center;margin: 0 auto;border-radius: 20px;background: #fff}
+
+#wally{
+    position: absolute;left:50%;bottom:0;width: 280px;
+    transform:translateX(-50%)/* ;border:1px solid red; */
+}
+#face{
+    background: url(../img/wally/face.png) no-repeat;
+    width: 100px;height: 130px;position: relative;left:130px;
+    top:80px;z-index: -1;
+}
+#body{
+    width: 280px;height: 320px;
+    background: url(../img/wally/body.png) no-repeat;
+}
+#leg{
+    width: 280px;height: 180px;background:url(../img/wally/leg.png) no-repeat bottom;
+}
