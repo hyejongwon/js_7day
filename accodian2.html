@@ -14,9 +14,9 @@
 			<li class='content' data-num='0'>
                 <h2>About me</h2>
                 <p class="acco-body">
-                <span>
-                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                </span>
+                    <span>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+                    </span>
                 </p>
 			</li>
 
@@ -24,9 +24,9 @@
                 <h2>Portfolio</h2>
                 <p class="acco-body">
                     <span>
-                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-            </span>     
-            </p>
+                     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                    </span>     
+                </p>
 			</li>
 
 			<li class='content' data-num='2'>
@@ -59,8 +59,31 @@
 		</ul>
 	</div>
     <script>
-   
+    //메뉴 아코디언 부분
+    const contentList =  document.querySelector('.content_list'); // ul 
+    const content = document.querySelectorAll('.content') ; //ul>li
+    const contentBody = document.querySelectorAll('.acco-body') //ul>li>p
 
+    contentList.addEventListener('click',e=>{
+        let isActive = e.target.classList.contains('active');
+        if(isActive){ // 닫기 
+            e.target.classList.remove('active')
+            e.target.childNodes.forEach((ele)=>{
+                if(ele.tagName === 'P'){
+                    ele.classList.remove('open')
+                }
+            })
+            
+        }else{ // 열기 
+            content.forEach(ele=>ele.classList.remove('active'))
+            e.target.classList.add('active');
+            contentBody.forEach(ele=>ele.classList.remove('open'))
+            let index = e.target.dataset.num;
+            contentBody[index].classList.add('open')
+
+        }
+    })
+    
     </script>
 	</body>
 </html>
