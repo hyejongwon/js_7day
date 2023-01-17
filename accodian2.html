@@ -59,6 +59,25 @@
 		</ul>
 	</div>
     <script>
+    //테마 
+    const body =  document.querySelector('body');   
+    const star = document.querySelectorAll('.star') ;
+    const moon = document.querySelector('#moon');
+    star.forEach(ele=>{
+        ele.addEventListener('click',()=>{
+            let isNight =  body.classList.contains('night');
+            console.log(isNight)
+            if(isNight){  //현재 밤 => 낮으로 만들어 줘야한다. 
+                body.classList.remove('night');
+                moon.classList.remove('on')
+            }else{ //현재 낮 => 밤으로 만들어 줘야한다. 
+                body.classList.add('night');
+                moon.classList.add('on');
+            }
+        })
+    })
+
+
     //메뉴 아코디언 부분
     const contentList =  document.querySelector('.content_list'); // ul 
     const content = document.querySelectorAll('.content') ; //ul>li

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <style>
+        .mainbanner{width: 960px;height: 400px;margin:50px auto 0;position: relative;}
+        .swiper-pagination-bullet{width: 15px;height: 15px;background-color: brown;}
+        .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{bottom:-50px}
+        .swiper-button-next, .swiper-button-prev{ width: 55px;height: 105px;}
+        .swiper-button-prev:after{
+            content: '';
+            display: block;
+            width: 55px;height: 105px;
+            background: url(img/prev.png) no-repeat;
+        }
+        .swiper-button-next:after{
+            content: '';
+            display: block;
+            width: 55px;height: 105px;
+            background: url(img/next.png) no-repeat;
+        }
+    </style>
+</head>
+<body>
+ 
+<div class="mainbanner">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="img/can/slide01.png" alt=""></div>
+        <div class="swiper-slide"><img src="img/can/slide02.png" alt=""></div>
+        <div class="swiper-slide"><img src="img/can/slide03.png" alt=""></div>
+        </div>
+
+        <!-- navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    <!-- pagination -->
+    <div class="swiper-pagination"></div>
+</div><!-- mainbanner -->
+<script>
+    const swiper = new Swiper('.swiper', {
+    loop: true,
+
+    pagination: {
+        el: '.swiper-pagination',
+        clickable:true,
+    },
+
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+        delay: 2000,
+    },
+  
+    });
+</script>
+</body>
+</html>

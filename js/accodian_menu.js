@@ -6,7 +6,7 @@ listAll.addEventListener('click',(e)=>{
    if(isState){ // li.on클래스가 있는 경우 
      e.target.classList.remove('on')
      e.target.childNodes.forEach(ele=>{
-        if(ele.tagName === 'UL'){
+        if(ele.tagName === 'UL'){ //태그명은 대문자로 
           ele.classList.remove('open')
         }
      })
